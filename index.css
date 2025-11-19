@@ -1,0 +1,172 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Cyber-aesthetic color system */
+    --background: 0 0% 4%;
+    --foreground: 180 100% 95%;
+
+    --card: 0 0% 8%;
+    --card-foreground: 180 100% 95%;
+
+    --popover: 0 0% 8%;
+    --popover-foreground: 180 100% 95%;
+
+    /* Neon cyan primary */
+    --primary: 187 100% 50%;
+    --primary-foreground: 0 0% 4%;
+
+    /* Electric purple secondary */
+    --secondary: 280 70% 60%;
+    --secondary-foreground: 0 0% 4%;
+
+    --muted: 0 0% 15%;
+    --muted-foreground: 180 50% 70%;
+
+    /* Pink accent */
+    --accent: 320 100% 70%;
+    --accent-foreground: 0 0% 4%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 0 0% 20%;
+    --input: 0 0% 15%;
+    --ring: 187 100% 50%;
+
+    --radius: 0.75rem;
+
+    /* Custom cyber colors */
+    --neon-cyan: 187 100% 50%;
+    --neon-purple: 280 70% 60%;
+    --neon-pink: 320 100% 70%;
+    --deep-black: 0 0% 4%;
+    --dark-gray: 0 0% 12%;
+    
+    /* Glassmorphism */
+    --glass-bg: 0 0% 100% / 0.05;
+    --glass-border: 0 0% 100% / 0.1;
+    
+    /* Shadows and glows */
+    --glow-cyan: 0 0 20px hsl(187 100% 50% / 0.5);
+    --glow-purple: 0 0 20px hsl(280 70% 60% / 0.5);
+    --glow-pink: 0 0 20px hsl(320 100% 70% / 0.5);
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(187 100% 50%), hsl(280 70% 60%));
+    --gradient-hero: linear-gradient(180deg, hsl(0 0% 4%), hsl(280 70% 10%));
+    
+    /* Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+  
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--background));
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--primary));
+    border-radius: 5px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--secondary));
+  }
+}
+
+@layer utilities {
+  /* Glassmorphism effect */
+  .glass {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .glass-strong {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+  }
+  
+  /* Glow effects */
+  .glow-cyan {
+    box-shadow: 0 0 20px hsl(187 100% 50% / 0.5);
+  }
+  
+  .glow-purple {
+    box-shadow: 0 0 20px hsl(280 70% 60% / 0.5);
+  }
+  
+  .glow-pink {
+    box-shadow: 0 0 20px hsl(320 100% 70% / 0.5);
+  }
+  
+  /* Text gradients */
+  .text-gradient {
+    background: linear-gradient(135deg, hsl(187 100% 50%), hsl(280 70% 60%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .text-gradient-pink {
+    background: linear-gradient(135deg, hsl(320 100% 70%), hsl(280 70% 60%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  /* Hover scale */
+  .hover-scale {
+    transition: transform 0.3s ease;
+  }
+  
+  .hover-scale:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Cyber grid background */
+  .cyber-grid {
+    background-image: 
+      linear-gradient(rgba(0, 240, 255, 0.1) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 240, 255, 0.1) 1px, transparent 1px);
+    background-size: 50px 50px;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
